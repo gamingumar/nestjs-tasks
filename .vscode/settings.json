@@ -1,0 +1,9 @@
+{
+  "psi-header.variables": [
+    ["projectCreationYear", "2020"],
+    ["projectname", "Nest JS Task Management CRUD API"]
+  ],
+  "psi-header.changes-tracking": {
+    "isActive": true
+  }
+}
