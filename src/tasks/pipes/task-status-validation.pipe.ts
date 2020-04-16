@@ -4,13 +4,13 @@
  * File Created: Thursday, 16th April 2020 12:38:08 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Thursday, 16th April 2020 1:58:20 am
+ * Last Modified: Thursday, 16th April 2020 7:23:41 pm
  * -----
  * Copyright 2020 - 2020 WhileGeek, https://umar.tech
  */
 
 import { PipeTransform, BadRequestException } from "@nestjs/common";
-import { TaskStatusList } from "../task.model";
+import { TaskStatusList } from "../task-status.enum";
 
 export class TaskStatusValidationPipe implements PipeTransform {
 

@@ -76,3 +76,36 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
   Nest is [MIT licensed](LICENSE).
+
+
+# Notes
+
+
+### Create Module:
+
+``` nest g module name ```
+
+### Controller
+
+- generate a controller without tests spec
+
+``` nest g controller name —no-spec ```
+
+### Service
+
+- generate a service without tests spec
+
+``` nest g service name —no-spec ```
+
+### DTO
+
+- (Data transfer Object)
+
+### TypeOrm
+
+- Create Postgres Database (pgadmin  and postgres)
+
+``` yarn add @nestjs/typeorm typeorm p ```
+
+
+

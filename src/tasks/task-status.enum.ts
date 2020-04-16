@@ -4,17 +4,17 @@
  * File Created: Wednesday, 15th April 2020 5:58:24 pm
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Thursday, 16th April 2020 12:57:44 am
+ * Last Modified: Thursday, 16th April 2020 7:23:41 pm
  * -----
  * Copyright YYYY - 2020 WhileGeek, https://umar.tech
  */
 
-export interface Task {
-  id: string;
-  title: string;
-  description: string;
-  status: TaskStatus;
-}
+// export interface Task {
+//   id: string;
+//   title: string;
+//   description: string;
+//   status: TaskStatus;
+// }
 
 export enum TaskStatus {
   OPEN = 'OPEN',

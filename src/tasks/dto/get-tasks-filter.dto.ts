@@ -4,12 +4,12 @@
  * File Created: Wednesday, 15th April 2020 11:19:57 pm
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Thursday, 16th April 2020 1:47:13 am
+ * Last Modified: Thursday, 16th April 2020 7:23:41 pm
  * -----
  * Copyright 2020 - 2020 WhileGeek, https://umar.tech
  */
 
-import { TaskStatus, TaskStatusList } from "../task.model";
+import { TaskStatus, TaskStatusList } from "../task-status.enum";
 import { IsOptional, IsIn, IsNotEmpty } from "class-validator";
 
 export class GetTasksFilterDto {
