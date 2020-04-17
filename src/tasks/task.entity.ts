@@ -4,13 +4,14 @@
  * File Created: Thursday, 16th April 2020 6:25:18 pm
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Thursday, 16th April 2020 7:35:10 pm
+ * Last Modified: Saturday, 18th April 2020 12:26:42 am
  * -----
  * Copyright 2020 - 2020 WhileGeek, https://umar.tech
  */
 
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 import { TaskStatus } from "./task-status.enum";
+import { User } from "../auth/user.entity";
 
 @Entity()
 export class Task extends BaseEntity {
@@ -25,4 +26,10 @@ export class Task extends BaseEntity {
   
   @Column()
   status: TaskStatus;
+
+  @ManyToOne(type => User, user => user.tasks, {eager: false})
+  user: User;
+
+  @Column()
+  userId: number;
 }
