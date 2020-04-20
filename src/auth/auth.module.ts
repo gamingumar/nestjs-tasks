@@ -4,7 +4,7 @@
  * File Created: Friday, 17th April 2020 12:26:21 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Friday, 17th April 2020 10:09:44 pm
+ * Last Modified: Monday, 20th April 2020 9:10:52 pm
  * -----
  * Copyright 2020 - 2020 WhileGeek, https://umar.tech
  */
@@ -17,14 +17,18 @@ import { UserRepository } from './user.repository';
 import { JwtModule } from '@nestjs/jwt'
 import { PassportModule } from '@nestjs/passport'
 import { JwtStrategy } from './jwt-strategy';
+import * as config from 'config'
+import { IConfigJWT } from '../../config/config.interface';
+
+const jwtConfig:IConfigJWT = config.get('jwt')
 
 @Module({
   imports: [
     PassportModule.register({ defaultStrategy: 'jwt'}),
     JwtModule.register({
-      secret: 'guSecret94',
+      secret: jwtConfig.secret,
       signOptions: {
-        expiresIn: 3600
+        expiresIn: jwtConfig.expiresIn
       }
     }),
     TypeOrmModule.forFeature([UserRepository])

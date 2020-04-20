@@ -4,20 +4,24 @@
  * File Created: Thursday, 16th April 2020 6:07:35 pm
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Thursday, 16th April 2020 8:02:18 pm
+ * Last Modified: Monday, 20th April 2020 9:07:52 pm
  * -----
  * Copyright 2020 - 2020 WhileGeek, https://umar.tech
  */
 
 import {TypeOrmModuleOptions} from '@nestjs/typeorm'
 
+import * as config from 'config';
+import { IConfigDB } from '../../config/config.interface';
+const dbConfig:IConfigDB = config.get('db')
+
 export const typeOrmConfig: TypeOrmModuleOptions = {
-  type: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  username: 'postgres',
-  password: 'postgres',
-  database: 'taskmanagement',
+  type: dbConfig.type,
+  host: dbConfig.host,
+  port: dbConfig.port,
+  username: dbConfig.username,
+  password: dbConfig.password,
+  database: dbConfig.database,
   entities: [__dirname + "/../**/*.entity.{js,ts}"], //? use all entities from previous folder
-  synchronize: true, // ! disable in production
+  synchronize: dbConfig.synchronize, // ! disable in production
 }
