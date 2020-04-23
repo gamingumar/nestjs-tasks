@@ -4,7 +4,7 @@
  * File Created: Thursday, 16th April 2020 6:34:53 pm
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Monday, 20th April 2020 6:34:27 pm
+ * Last Modified: Friday, 24th April 2020 1:18:07 am
  * -----
  * Copyright 2020 - 2020 WhileGeek, https://umar.tech
  */
@@ -27,7 +27,7 @@ export class TaskRepository extends Repository<Task>{
 
     const query = this.createQueryBuilder('task')
 
-    query.where('task.userIdd = :userId', { userId: user.id })
+    query.where('task.userId = :userId', { userId: user.id })
 
 
     if (status) {

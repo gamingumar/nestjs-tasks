@@ -41,7 +41,7 @@ $ npm install
 
 ```bash
 # development
-$ npm run start
+$ npm run start | nest start
 
 # watch mode
 $ npm run start:dev
@@ -107,5 +107,5 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ``` yarn add @nestjs/typeorm typeorm p ```
 
-
-
+### Documentation
+``` npx compodoc -p tsconfig.json -s ```

@@ -4,7 +4,7 @@
  * File Created: Wednesday, 15th April 2020 2:12:50 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Monday, 20th April 2020 9:38:26 pm
+ * Last Modified: Friday, 24th April 2020 12:41:35 am
  * -----
  * Copyright 2020 - 2020 WhileGeek, https://umar.tech
  */
@@ -13,6 +13,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger } from '@nestjs/common';
 import * as config from 'config'
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const serverConfig:any = config.get('server');
@@ -29,6 +30,15 @@ async function bootstrap() {
     //   origin
     // })
   }
+
+  const options = new DocumentBuilder()
+  .setTitle('Tasks example API')
+  .setDescription('The tasks API description')
+  .setVersion('1.0')
+  .addTag('tasks')
+  .build();
+const document = SwaggerModule.createDocument(app, options);
+SwaggerModule.setup('api', app, document);
 
   await app.listen(port);
   logger.log(`Application listening on the port: ${port}`)
