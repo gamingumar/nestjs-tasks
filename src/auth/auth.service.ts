@@ -4,7 +4,7 @@
  * File Created: Friday, 17th April 2020 12:29:47 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Monday, 20th April 2020 6:38:59 pm
+ * Last Modified: Wednesday, 29th April 2020 10:05:41 pm
  * -----
  * Copyright 2020 - 2020 WhileGeek, https://umar.tech
  */
@@ -27,17 +27,18 @@ export class AuthService {
   ) {}
 
   async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
+    this.logger.debug('in sign up...')
     return await this.userRepository.signUp(authCredentialsDto)
   }
 
   async signIn(authCredentialsDto: AuthCredentialsDto): Promise<{accessToken: string}> {
-    const username = await this.userRepository.validateUserPassword(authCredentialsDto);
+    const user = await this.userRepository.validateUserPassword(authCredentialsDto);
 
-    if (!username) {
+    if (!user) {
       throw new UnauthorizedException('Invalid credentials')
     }
 
-    const payload: JwtPayload = {username};
+    const payload: JwtPayload = {username: user.username, role: user.role};
     const accessToken = await this.jwtService.sign(payload)
     this.logger.debug(`Generated token with payload ${JSON.stringify(payload)}`)
 

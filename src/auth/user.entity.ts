@@ -4,7 +4,7 @@
  * File Created: Friday, 17th April 2020 12:33:46 am
  * Author: Umar Aamer (umaraamer@gmail.com)
  * -----
- * Last Modified: Friday, 17th April 2020 11:19:01 pm
+ * Last Modified: Wednesday, 29th April 2020 6:18:22 pm
  * -----
  * Copyright 2020 - 2020 WhileGeek, https://umar.tech
  */
@@ -21,6 +21,9 @@ export class User extends BaseEntity {
 
   @Column()
   username: string;
+
+  @Column()
+  role?: string|null;
 
   @Column()
   password: string;

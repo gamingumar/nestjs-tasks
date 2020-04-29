@@ -41,13 +41,20 @@ $ npm install
 
 ```bash
 # development
-$ npm run start | nest start
+$ yarn start | nest start
 
 # watch mode
-$ npm run start:dev
+$ yarn start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn start:prod
+```
+
+## Migrations
+```
+yarn typeorm migration:run
+
+yarn typeorm migration:revert
 ```
 
 ## Test
@@ -109,3 +116,11 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ### Documentation
 ``` npx compodoc -p tsconfig.json -s ```
+
+### Defining Guards (Role Based Authentication)
+
+```
+@UseGuards(RolesGuard)
+@CanAccess(UserTypes.Admin)
+
+```
