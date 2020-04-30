@@ -118,3 +118,12 @@ $ npm run test:cov
 
 @CanAccess(UserTypes.Admin)
 ```
+
+
+### Dependencies:
+
+```
+yarn add @nestjs/jwt @nestjs/passport @nestjs/swagger @nestjs/typeorm typeorm passport passport-jwt pg bcrypt class-transformer class-validator config swagger-ui-express
+
+yarn add -D @compodoc/compodoc @types/bcrypt @types/config
+```
