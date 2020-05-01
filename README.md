@@ -82,7 +82,7 @@ $ npm run test:cov
 # Notes
 
 
-### Create Module:
+### Creating Module:
 
 ``` nest g module name ```
 
@@ -101,6 +101,34 @@ $ npm run test:cov
 ### DTO
 
 - (Data transfer Object)
+
+```
+dto/module.dto.ts
+module.controller.ts
+module.entity.ts
+module.module.ts
+module.repository.ts
+module.service.ts
+```
+
+### entity
+```
+import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+
+@Entity()
+export class Module extends BaseEntity {
+}
+```
+
+### repository
+```
+import { Repository, EntityRepository } from "typeorm";
+import { Logger, InternalServerErrorException } from "@nestjs/common";
+
+@EntityRepository(T)
+export class ModuleRepository extends Repository<T>{
+}
+```
 
 ### TypeOrm
 
