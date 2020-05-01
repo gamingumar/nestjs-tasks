@@ -82,7 +82,7 @@ $ npm run test:cov
 # Notes
 
 
-### Creating Module:
+## Creating Module:
 
 ``` nest g module name ```
 
@@ -98,7 +98,7 @@ $ npm run test:cov
 
 ``` nest g service name —no-spec ```
 
-### DTO
+#### DTO
 
 - (Data transfer Object)
 
